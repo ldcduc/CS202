@@ -73,6 +73,20 @@ Date& Date:: operator-= (const Date& src) {
     return *this;
 }
 
+Date& Date:: operator+= (int v) {
+    int tmp = (long)*this;
+    tmp += v;
+    *this = long_to_date(tmp);
+    return *this;
+}
+
+Date& Date:: operator-= (int v) {
+    int tmp = (long)*this;
+    tmp -= v;
+    *this = long_to_date(tmp);
+    return *this;
+}
+
 bool Date:: operator== (const Date& src) {
     return (day == src.day && month == src.month && year == src.year);
 }
@@ -141,7 +155,7 @@ Date Date:: operator-- (int) {
 }
 
 Date:: operator int() {
-    return Date(year, 1, 1);
+    return long(*this) - long(Date(year, 1, 1));
 }
 
 Date:: operator long() {
@@ -175,4 +189,36 @@ istream& operator>> (istream& is, Date& src) {
 ostream& operator<< (ostream& os, const Date& src) {
     os << setfill('0') << setw(2) << src.day << '/' << setw(2) << src.month << '/' << setw(4) << src.year;
     return os;
+}
+
+Date operator+ (const Date& a, const Date& b) {
+    Date tmp = a;
+    tmp += b;
+    return tmp;
+}
+
+Date operator+ (const Date& a, int v) {
+    Date tmp = a;
+    tmp += v;
+    return tmp;
+}
+Date operator+ (int v, const Date& a) {
+    Date tmp = a;
+    tmp += v;
+    return tmp;
+}
+Date operator- (const Date& a, const Date& b) {
+    Date tmp = a;
+    tmp -= b;
+    return tmp;
+}
+Date operator- (const Date& a, int v) {
+    Date tmp = a;
+    tmp -= v;
+    return tmp;
+}
+Date operator- (int v, const Date& a) {
+    Date tmp = a;
+    tmp -= v;
+    return tmp;
 }

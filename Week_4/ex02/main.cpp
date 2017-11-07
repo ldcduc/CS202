@@ -12,32 +12,32 @@ int main()
 	Date d6;
 	d6=d3;
 
-	/* d6=d3.Tomorrow(); */
-	/* d5=d2.Yesterday(); */
+	d6=d3.Tomorrow();
+	d5=d2.Yesterday();
 	
-	/* cout<<(d6==d4); */
-	/* cout<<(d6!=d4); */
-	/* cout<<(d6>=d4); */
-	/* cout<<(d6<=d4); */
-	/* cout<<(d6>d4); */
-	/* cout<<(d6<d4); */
+	cout<<(d6==d4) << endl;
+	cout<<(d6!=d4) << endl;
+	cout<<(d6>=d4) << endl;
+	cout<<(d6<=d4) << endl;
+	cout<<(d6>d4) << endl;
+	cout<<(d6<d4) << endl;
 
-	/* d3=d2+1; */
-	/* d2=d3-2; */
-	/* d4++; */
-	/* ++d2; */
-	/* d5--; */
-	/* --d6; */
+	d3=d2+1;
+	d2=d3-2;
+	d4++;
+	++d2;
+	d5--;
+	--d6;
 
-	/* cout<<d3; */
-	/* cin>>d4; */
+	cout<<d3 << endl;
+	cin>>d4;
 	
-	/* cout<<(int)d3;			// from the first day of current year */
+	cout<<(int)d3 << endl;			// from the first day of current year
 	
-	/* cout<<(long)d4; 		// from 1/1/1 */
+	cout<<(long)d4 << endl; 		// from 1/1/1
 
-	/* Date d7; */
-	/* d7+=7; */
-	/* d2-=6; */
+	Date d7;
+	d7+=7;
+	d2-=6;
         return 0;
 }

@@ -27,6 +27,8 @@ public:
     Date Yesterday();
     Date& operator+= (const Date&);
     Date& operator-= (const Date&);
+    Date& operator+= (int);
+    Date& operator-= (int);
     bool operator== (const Date&);
     bool operator!= (const Date&);
     bool operator<= (const Date&);
@@ -49,5 +51,9 @@ public:
 istream& operator>> (istream&, Date&);
 ostream& operator<< (ostream&, const Date&);
 
-Date operator+(const Date&, int);
-Date operator-(const Date&, int);
+Date operator+ (const Date&, const Date&);
+Date operator+ (const Date&, int);
+Date operator+ (int, const Date&);
+Date operator- (const Date&, const Date&);
+Date operator- (const Date&, int);
+Date operator- (int, const Date&);
