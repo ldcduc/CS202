@@ -9,6 +9,8 @@ void Fraction:: simplify() {
     int t = gcd(nu, de);
     nu /= t;
     de /= t;
+    if (nu*de < 0) 
+        if (de < 0) de = -de, nu = -nu;
 }
 
 int Fraction:: get_nu() {
@@ -101,12 +103,14 @@ Fraction Fraction:: operator--(int) {
     return temp;
 }
 
-/* operator Fraction:: float() { */
-/*     return (float) nu / den; */
-/* } */
+Fraction:: operator float() {
+    return (float) nu / (float) de;
+}
 
 istream& operator>> (istream& is, Fraction &f) {
-    is >> f.nu >> f.de;
+    cout << "num/den ";
+    char c;
+    is >> f.nu >> c >> f.de;
     return is;
 }
 
@@ -122,9 +126,33 @@ Fraction operator+ (const Fraction& a, const Fraction& b) {
     return c;
 }
 
+Fraction operator+ (int v, const Fraction& a) {
+    Fraction c(v);
+    c += a;
+    return c;
+}
+
+Fraction operator+ (const Fraction&a, int v) {
+    Fraction c(v);
+    c += a;
+    return c;
+}
+
 Fraction operator- (const Fraction& a, const Fraction& b) {
     Fraction c;
     c = a;
+    c -= b;
+    return c;
+}
+
+Fraction operator- (int v, const Fraction& a) {
+    Fraction c(v);
+    c -= a;
+    return c;
+}
+
+Fraction operator- (const Fraction&a, int v) {
+    Fraction c(a), b(v);
     c -= b;
     return c;
 }
@@ -136,6 +164,18 @@ Fraction operator* (const Fraction& a, const Fraction& b) {
     return c;
 }
 
+Fraction operator* (int v, const Fraction& a) {
+    Fraction c(v);
+    c *= a;
+    return c;
+}
+
+Fraction operator* (const Fraction&a, int v) {
+    Fraction c(a), b(v);
+    c *= b;
+    return c;
+}
+
 Fraction operator/ (const Fraction& a, const Fraction& b) {
     Fraction c;
     c = a;
@@ -143,3 +183,14 @@ Fraction operator/ (const Fraction& a, const Fraction& b) {
     return c;
 }
 
+Fraction operator/ (int v, const Fraction& a) {
+    Fraction c(v);
+    c /= a;
+    return c;
+}
+
+Fraction operator/ (const Fraction&a, int v) {
+    Fraction c(a), b(v);
+    c /= b;
+    return c;
+}

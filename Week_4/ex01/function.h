@@ -35,7 +35,7 @@ public:
     Fraction  operator++ (int);
     Fraction& operator-- ();
     Fraction  operator-- (int);
-    /* operator float(); */
+    operator float();
 };
 
 istream& operator>> (istream& is, Fraction &F);
@@ -43,6 +43,14 @@ ostream& operator<< (ostream& os, const Fraction &F);
 
 
 Fraction operator+ (const Fraction&, const Fraction&);
+Fraction operator+ (int, const Fraction&);
+Fraction operator+ (const Fraction&, int);
 Fraction operator- (const Fraction&, const Fraction&);
+Fraction operator- (int, const Fraction&);
+Fraction operator- (const Fraction&, int);
 Fraction operator* (const Fraction&, const Fraction&);
+Fraction operator* (int, const Fraction&);
+Fraction operator* (const Fraction&, int);
 Fraction operator/ (const Fraction&, const Fraction&);
+Fraction operator/ (int, const Fraction&);
+Fraction operator/ (const Fraction&, int);
