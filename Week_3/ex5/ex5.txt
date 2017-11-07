@@ -1,0 +1,13 @@
+import datetime
+
+val = input("Input time 'hh:mm:ss' (24-hour) ").split(':')
+hh = int(val[0])
+mm = int(val[1])
+ss = int(val[2])
+
+a = datetime.datetime(1900,1,1,hh,mm,ss)
+b = a + datetime.timedelta(seconds=1)
+c = a + datetime.timedelta(seconds=-1)
+print "Increase", a.strftime("%H:%M:%S"), "1 second", b.strftime("%H:%M:%S")
+print "Decrease", a.strftime("%H:%M:%S"), "1 second", c.strftime("%H:%M:%S")
+

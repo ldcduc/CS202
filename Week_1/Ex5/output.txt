@@ -1,0 +1,8 @@
+<student>
+<id>1651044</id>
+<name>ong duc</name>
+<_class>16CTT</_class>
+<address>oc mon</address>
+<mark>10</mark>
+<gpa>A</gpa>
+</student>

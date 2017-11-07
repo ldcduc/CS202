@@ -1,0 +1,1 @@
+3 vertices (4,5),(5,4),(5,5),Isosceles right triangle,Parameter = 3.41421,Area = 0.5,
