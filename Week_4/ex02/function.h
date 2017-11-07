@@ -10,7 +10,6 @@ using namespace std;
 class Date{
 private:
     int day, month, year;
-    bool is_leap();
     bool is_leap(int);
     bool is_leap(const Date&);
     int dom(int);
@@ -21,7 +20,7 @@ public:
     Date(int, int);
     Date(int, int, int);
     /* Date(const Date&); */
-
+    bool is_leap();
     /* Date& operator= (const Date&); */
     Date Tomorrow();
     Date Yesterday();
