@@ -45,13 +45,13 @@ public:
     void call(double k) {
         cout << "D:double" << endl;
     }
-    /* using B::call; */
+    using B::call;
 };
 
 int main() {
     D ob;
     ob.call(2);
     ob.call(3.5);
-    ob.B::call(2);
+    /* ob.B::call(2); */
     return 0;
 }

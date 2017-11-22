@@ -1,0 +1,21 @@
+1/ Class and object
+    a. Encapsulation
+        data members -> attributes
+        methods -> behaviors
+    b. Data hiding
+    c. Constructor
+            Default
+            Copy constructor overload
+                free: shallow copy
+                defined one: deep copy
+        Destructor
+        Operators
+            copy assignment operator
+                free
+                user defined
+    d. Inheritance
+        Scope
+        Constructor
+        Destructor
+        Polymorphism
+
